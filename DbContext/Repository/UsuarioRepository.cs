@@ -1,24 +1,28 @@
 ﻿using Business.Models;
-using DbContext.DbContext;
+using DataBase;
+using DataBase.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbContext.Repository
+namespace DataBase.Repository
 {
     internal class UsuarioRepository : IUsuarioRepository
     {
-        private readonly Context _dbcontext;
+        private readonly DataBaseContext _context;
 
-        public UsuarioRepository(Context contexto)
+        public UsuarioRepository(DataBaseContext context)
         {
-            _dbcontext = contexto;
+            _context = context;
         }
-        public Usuario Create()
+
+        public Usuario Create(Usuario usuario)
         {
+           _context.Add(usuario);
             throw new NotImplementedException();
+            
         }
 
         public Usuario Delete(int id)

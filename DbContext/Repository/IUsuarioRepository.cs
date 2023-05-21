@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbContext.Repository
+namespace DataBase.Repository
 {
-    public interface IUsuarioRepository
+    public interface IUsuarioRepository 
     {
         List<Usuario> GetAll();
         Usuario Get(int id);
         Usuario Update();
         Usuario Delete(int id);
-        Usuario Create();
+        Usuario Create(Usuario usuario);
     }
 }
