@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business.Models
 {
-    public class Endereco 
+    public class EnderecoEntrega 
     {
         public int Id { get; set; }
         public int UsuarioId { get; set; }

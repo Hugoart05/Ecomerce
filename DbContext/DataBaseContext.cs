@@ -1,5 +1,6 @@
 ﻿using Business.Models;
 using Business.Produtos;
+using DataBase.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,20 @@ namespace DataBase
 {
     public class DataBaseContext : DbContext
     {
-            public DataBaseContext(DbContextOptions options)
-            {
+        public DataBaseContext(DbContextOptions options)
+        {
                 
-            }
-            DbSet<Usuario> Usuario { get; set; }
-            DbSet<Endereco> Endereco { get; set; }
-            DbSet<Produto> Produto { get; set; }
-            DbSet<FornecedorProduto> FornecedorProduto { get; set; }
-            DbSet<CategoriaProduto> Categoria { get; set; }
+        }
+        DbSet<Usuario> Usuario { get; set; }
+        DbSet<EnderecoEntrega> Endereco { get; set; }
+        DbSet<Produto> Produto { get; set; }
+        DbSet<FornecedorProduto> FornecedorProduto { get; set; }
+        DbSet<CategoriaProduto> Categoria { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UsuarioConfigurations());
+        }
     }
 }

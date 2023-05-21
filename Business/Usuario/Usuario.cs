@@ -18,7 +18,7 @@ namespace Business.Models
         public string Password { get; set; }
         
         public Contato? Contato { get; set; }
-        public ICollection<Endereco>? EnderecosEntrega { get; set; }
+        public ICollection<EnderecoEntrega>? EnderecosEntrega { get; set; }
 
     }
 }
