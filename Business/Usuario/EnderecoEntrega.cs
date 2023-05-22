@@ -11,10 +11,10 @@ namespace Business.Models
         public int Id { get; set; }
         public Usuario? Usuario { get; set; }
         public Usuario? UsuarioId { get; set; }
-        public string Cidade { get; set; }
-        public string Bairro { get; set; }
-        public string Rua { get; set; }
-        public string TipoResidencia { get; set; }
+        public string? Cidade { get; set; }
+        public string? Bairro { get; set; }
+        public string? Rua { get; set; }
+        public string? TipoResidencia { get; set; }
         public int Celular { get; set; }
         
     }

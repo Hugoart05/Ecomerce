@@ -45,9 +45,6 @@ namespace DataBase.Configurations
             builder.HasOne(a => a.EnderecoEntrega)
                 .WithOne(end => end.Usuario)
                 .HasForeignKey<EnderecoEntrega>(a => a.UsuarioId);
-
-             
-
         }
     }
 }

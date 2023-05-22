@@ -10,6 +10,7 @@ namespace DataBase.Repository
     public interface IUsuarioRepository 
     {
         List<Usuario> GetAll();
+        Usuario GetEmail();
         Usuario Get(int id);
         Usuario Update();
         Usuario Delete(int id);
