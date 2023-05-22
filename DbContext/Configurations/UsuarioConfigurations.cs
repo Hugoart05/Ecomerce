@@ -16,9 +16,37 @@ namespace DataBase.Configurations
         {
             //FluentApi da classe Usuario
 
-            #region;
-                builder.
-            #endregion
+            builder.ToTable("TB_USUARIOS");
+            builder.Property(a => a.Id)
+                .ValueGeneratedOnAdd();
+
+            builder.HasIndex("CPF").IsUnique()
+                .HasFilter("[CPF] is not null")
+                .HasDatabaseName("IX_CPF_UNIQUE");
+
+
+            builder.Property(x => x.Name)
+                .HasColumnName("NOME")
+                .HasMaxLength(64)
+                .HasDefaultValue("");
+
+
+            builder.Property(x => x.Email)
+                .IsRequired()
+                .HasMaxLength(100)
+                .HasDefaultValue("");
+
+
+            builder.HasOne(a => a.Contato)
+                .WithOne(cont => cont.UsuarioId)
+                .HasForeignKey<Contato>(a => a.UsuarioId);
+
+
+            builder.HasOne(a => a.EnderecoEntrega)
+                .WithOne(end => end.Usuario)
+                .HasForeignKey<EnderecoEntrega>(a => a.UsuarioId);
+
+             
 
         }
     }

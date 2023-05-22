@@ -2,5 +2,7 @@
 {
     public class Contato
     {
+       
+        public Usuario UsuarioId { get; set; }
     }
 }
